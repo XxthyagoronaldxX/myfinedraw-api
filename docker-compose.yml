@@ -1,0 +1,15 @@
+services:
+  postgres:
+    image: postgres:16-alpine
+    container_name: myfinedraw-postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: myfinedraw
+      POSTGRES_PASSWORD: myfinedraw
+      POSTGRES_DB: myfinedraw
+    ports:
+      - "5433:5432"
+    volumes:
+      - myfinedraw-pg:/var/lib/postgresql/data
+volumes:
+  myfinedraw-pg:
