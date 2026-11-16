@@ -10,6 +10,7 @@
     "start:stage": "bun --env-file=.env.stage run start",
     "db:up": "docker compose up -d",
     "prisma:migrate": "prisma migrate dev",
+    "prisma:migrate:stage": "DOTENV_CONFIG_PATH=.env.stage prisma migrate deploy",
     "prisma:generate": "prisma generate",
     "prisma:studio": "prisma studio"
   },
